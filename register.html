@@ -80,15 +80,12 @@ let password = document.getElementById("password").value;
 // تشفير كلمة المرور
 let encryptedPassword = CryptoJS.SHA256(password).toString();
 
-push(ref(database, "users"), {
-name: name,
-email: email,
-password: encryptedPassword
+createUserWithEmailAndPassword(auth, email, password)
 });
 
 alert("Registered successfully");
 
-});
+
 </script>
 </body>
 </html>
